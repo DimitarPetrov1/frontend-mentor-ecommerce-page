@@ -34,7 +34,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid #ececec90;
   height: 90px;
 }
 .nav-left,
@@ -50,6 +50,30 @@ nav {
 
 .nav-left a {
   margin-right: 30px;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.nav-left li a:hover::after {
+  display: block;
+  content: "";
+  width: 50px;
+  height: 4px;
+  background-color: hsl(26, 100%, 55%);
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  transform: translateX(-50%);
+  animation: underline 0.15s ease-in;
+}
+
+@keyframes underline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 4px;
+  }
 }
 
 .nav-right svg {
@@ -65,13 +89,14 @@ main {
   margin: 90px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .main-left,
 .main-right {
-  width: 50%;
+  flex-basis: 40%;
+  width: 40%;
 }
 
 .main-left__big-img {
@@ -165,6 +190,13 @@ main {
 }
 .qty-control {
   color: hsl(26, 100%, 55%);
+}
+
+.qty-control,
+.btn-cart,
+.nav-right svg,
+.avatar,
+.main-left-images-select img {
   cursor: pointer;
 }
 
@@ -175,7 +207,6 @@ main {
   align-items: center;
   background-color: hsl(26, 100%, 55%);
   border-radius: 14px;
-  cursor: pointer;
   user-select: none;
   color: hsl(0, 0%, 100%);
   font-weight: 700;

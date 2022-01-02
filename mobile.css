@@ -28,6 +28,7 @@
   }
   .main-left,
   .main-right {
+    flex-basis: 100%;
     width: 100%;
   }
   .main-left {
