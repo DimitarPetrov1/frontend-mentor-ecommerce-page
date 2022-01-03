@@ -4,7 +4,7 @@
   }
   nav {
     border-bottom: none;
-    height: 50px;
+    height: 60px;
     margin: 0 20px;
   }
   .nav-left {
@@ -16,15 +16,14 @@
     transform: scale(0.8);
   }
   .avatar {
-    height: 20px;
-    width: 20px;
+    height: 26px;
+    width: 26px;
     margin-left: 16px;
   }
   main {
     margin: 0 0;
     width: 100%;
     padding-bottom: 100px;
-    height: 100vh;
   }
   .main-left,
   .main-right {
@@ -92,4 +91,34 @@
     transform: scale(0.7);
     margin-right: 10px;
   }
+  /* mobile menu */
+  .mobile-menu-btn {
+    visibility: visible;
+  }
+  .menu-open {
+    visibility: visible;
+  }
+  .mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: hsl(223, 64%, 98%);
+    z-index: 10;
+    padding: 20px;
+  }
+  .mobile-menu li {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .mobile-menu a {
+    color: hsl(220, 13%, 13%);
+  }
+  .close-btn {
+    margin-bottom: 50px;
+  }
+  /* basket */
 }
