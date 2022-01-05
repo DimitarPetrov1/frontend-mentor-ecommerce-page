@@ -122,3 +122,11 @@ addToCartBtn.addEventListener("click", () => {
 });
 
 const emptyCartTemplate = `<p class="empty-cart-txt">Your cart is empty.</p>`;
+
+// Close cart on esc key press
+document.addEventListener("keyup", (e) => {
+  if (e.key === "Escape") {
+    cart.style.visibility = "hidden";
+    avatar.style.outline = "none";
+  }
+});

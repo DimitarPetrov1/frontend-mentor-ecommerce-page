@@ -13,6 +13,7 @@ body {
   background-color: hsl(223, 64%, 98%);
   margin: 0 10%;
   user-select: none;
+  height: 100vh;
 }
 
 ul {
@@ -203,7 +204,11 @@ main {
 .avatar,
 .main-left-images-select img,
 .mobile-menu-btn,
-.close-btn {
+.close-btn,
+.close-lightbox,
+.lightbox-left,
+.lightbox-right,
+.main-left__big-img {
   cursor: pointer;
 }
 
@@ -239,14 +244,15 @@ main {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #00000075;
+  background: #00000090;
+  z-index: 10;
 }
 /* Basket */
 .basket-window {
   position: absolute;
   top: 74px;
   right: 0;
-  min-width: 340px;
+  width: 340px;
   height: 220px;
   border-radius: 14px;
   background: hsl(223, 64%, 98%);
@@ -316,4 +322,135 @@ main {
 
 .cart-more p {
   font-size: 0.9rem;
+}
+/* Lightbox */
+.lightbox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  display: none;
+}
+
+.lightbox-big-image {
+  position: relative;
+}
+
+.close-lightbox,
+.lightbox-left svg,
+.lightbox-right svg {
+  position: absolute;
+  transition: fill 0.2s ease-in-out, stroke 0.2s ease-in-out;
+  stroke: hsl(220, 13%, 13%);
+}
+.lightbox-left svg,
+.lightbox-right svg {
+  transform: scale(0.8);
+}
+
+.close-lightbox {
+  right: 0;
+  top: -26px;
+  fill: hsl(223, 64%, 98%);
+  stroke: none;
+}
+.close-lightbox:hover {
+  fill: hsl(26, 100%, 55%);
+}
+.lightbox-left:hover svg,
+.lightbox-right:hover svg {
+  stroke: hsl(26, 100%, 55%);
+}
+
+.lightbox-left,
+.lightbox-right {
+  position: absolute;
+  display: block;
+  background: hsl(223, 64%, 98%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-left {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.lightbox-right {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.lightbox-images-select {
+  justify-content: space-evenly;
+}
+
+.lightbox-images-select img,
+.lightbox-image-holder {
+  width: 60px;
+  height: 60px;
+}
+
+.lightbox-image-holder {
+  position: relative;
+}
+.lightbox-image-holder-active:after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  outline: 2px solid hsl(26, 100%, 55%);
+}
+
+.lightbox-image-holder:hover:after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 8px;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* main page small image hover */
+.mainpage-small-image-holder {
+  position: relative;
+}
+.mainpage-small-image-holder:hover:after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 8px;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.mainpage-small-image-holder-active:after {
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  outline: 2px solid hsl(26, 100%, 55%);
 }

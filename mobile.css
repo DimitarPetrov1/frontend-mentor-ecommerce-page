@@ -1,6 +1,7 @@
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   body {
     margin: 0 0;
+    width: 100%;
   }
   nav {
     border-bottom: none;
@@ -8,9 +9,7 @@
     margin: 0 20px;
   }
   .nav-left {
-    visibility: hidden;
-    width: 0;
-    height: 0;
+    display: none;
   }
   .nav-right svg {
     transform: scale(0.8);
@@ -43,9 +42,7 @@
     object-fit: cover;
   }
   .main-left-images-select {
-    visibility: hidden;
-    width: 0;
-    height: 0;
+    display: none;
   }
   .item-brand {
     margin: 20px 0 10px 0;
@@ -121,4 +118,7 @@
     margin-bottom: 50px;
   }
   /* basket */
+  .basket-window {
+    width: 90vw;
+  }
 }
