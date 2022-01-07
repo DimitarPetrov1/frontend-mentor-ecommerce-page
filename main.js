@@ -17,6 +17,14 @@ const itemCounter = document.querySelector(".item-counter");
 
 const addToCartBtn = document.querySelector(".btn-cart");
 
+export const noOverflow = (cond) => {
+  if (cond === true) {
+    document.querySelector("body").style.overflow = "hidden";
+  } else {
+    document.querySelector("body").style.overflow = "auto";
+  }
+};
+
 setInterval(() => {
   let removeItemBtn = document.querySelectorAll(".remove-item-btn");
   removeItemBtn.forEach((btn) =>
@@ -35,11 +43,13 @@ setInterval(() => {
 menuBtn.addEventListener("click", () => {
   navLeft.classList.add("menu-open");
   blackOverlay.classList.add("black-overlay-on");
+  noOverflow(true);
 });
 
 closeBtn.addEventListener("click", () => {
   mobileMenu.classList.remove("menu-open");
   blackOverlay.classList.remove("black-overlay-on");
+  noOverflow(false);
 });
 
 const handleOpenCart = () => {
@@ -128,5 +138,8 @@ document.addEventListener("keyup", (e) => {
   if (e.key === "Escape") {
     cart.style.visibility = "hidden";
     avatar.style.outline = "none";
+    mobileMenu.classList.remove("menu-open");
+    blackOverlay.classList.remove("black-overlay-on");
+    noOverflow(false);
   }
 });

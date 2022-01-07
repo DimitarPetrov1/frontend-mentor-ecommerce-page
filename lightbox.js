@@ -1,3 +1,5 @@
+import { noOverflow } from "./main.js";
+
 // BUTTONS
 const lightboxLeftBtn = document.querySelector(".lightbox-left");
 const lightboxRightBtn = document.querySelector(".lightbox-right");
@@ -73,6 +75,7 @@ allLightboxImages.forEach((image, index) =>
 const closeLightbox = () => {
   overlay.classList.remove("black-overlay-on");
   lightbox.style.display = "none";
+  noOverflow(false);
 };
 
 document.addEventListener("keyup", (e) => {
@@ -86,9 +89,10 @@ closeLightboxBtn.addEventListener("click", closeLightbox);
 productPageBigImage.addEventListener("click", () => {
   overlay.classList.add("black-overlay-on");
   lightbox.style.display = "unset";
+  noOverflow(true);
 });
 
-// change big image on main page --
+// change big image on main page -- needed only for this project
 const allSmallImagesMainPage = document.querySelectorAll(
   ".mainpage-small-image-holder img"
 );
@@ -103,4 +107,39 @@ allSmallImagesMainPage.forEach((img) => {
     img.parentElement.classList.add("mainpage-small-image-holder-active");
     productPageBigImage.src = img.src.replace("-thumbnail", "");
   });
+});
+
+// change big image on mobile view -- needed only for this project
+
+const mobileLeft = document.querySelector(".mobile-control-left");
+const mobileRight = document.querySelector(".mobile-control-right");
+const imagesSmall = document.querySelectorAll(
+  ".mainpage-small-image-holder img"
+);
+
+let startIndexMobile = 0;
+
+mobileLeft.addEventListener("click", () => {
+  if (startIndexMobile === 0) {
+    startIndexMobile = imagesSmall.length;
+  }
+  if (startIndexMobile > 0) {
+    startIndexMobile--;
+  }
+  productPageBigImage.src = imagesSmall[startIndexMobile].src.replace(
+    "-thumbnail",
+    ""
+  );
+});
+
+mobileRight.addEventListener("click", () => {
+  if (startIndexMobile < imagesSmall.length - 1) {
+    startIndexMobile++;
+  } else {
+    startIndexMobile = 0;
+  }
+  productPageBigImage.src = imagesSmall[startIndexMobile].src.replace(
+    "-thumbnail",
+    ""
+  );
 });

@@ -1,3 +1,66 @@
+@media screen and (max-width: 1200px) {
+  body {
+    margin: 0 20px;
+  }
+  .main-left,
+  .main-right {
+    width: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    margin: 20px 0;
+    justify-content: center;
+  }
+  .main-left {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .main-right {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .nav-left {
+    display: none;
+  }
+  .nav-right {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  /* mobile menu */
+  .mobile-menu-btn {
+    visibility: visible;
+  }
+  .menu-open {
+    visibility: visible;
+  }
+  .mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: hsl(223, 64%, 98%);
+    z-index: 900;
+    padding: 20px;
+  }
+  .mobile-menu li {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .mobile-menu a {
+    color: hsl(220, 13%, 13%);
+  }
+  .close-btn {
+    margin-bottom: 50px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   body {
     margin: 0 0;
@@ -8,9 +71,7 @@
     height: 60px;
     margin: 0 20px;
   }
-  .nav-left {
-    display: none;
-  }
+
   .nav-right svg {
     transform: scale(0.8);
   }
@@ -30,16 +91,18 @@
     width: 100%;
   }
   .main-left {
-    height: 240px;
+    height: 300px;
+    position: relative;
   }
   .main-right {
     margin: 0 20px;
   }
   .main-left__big-img {
     width: 100%;
-    height: 240px;
+    height: 100%;
     border-radius: 0;
     object-fit: cover;
+    pointer-events: none;
   }
   .main-left-images-select {
     display: none;
@@ -88,37 +151,17 @@
     transform: scale(0.7);
     margin-right: 10px;
   }
-  /* mobile menu */
-  .mobile-menu-btn {
-    visibility: visible;
+  nav {
+    position: unset;
   }
-  .menu-open {
-    visibility: visible;
-  }
-  .mobile-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60%;
-    height: 100vh;
-    background-color: hsl(223, 64%, 98%);
-    z-index: 10;
-    padding: 20px;
-  }
-  .mobile-menu li {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-
-  .mobile-menu a {
-    color: hsl(220, 13%, 13%);
-  }
-  .close-btn {
-    margin-bottom: 50px;
+  .nav-right {
+    position: unset;
   }
   /* basket */
   .basket-window {
-    width: 90vw;
+    width: 96%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
