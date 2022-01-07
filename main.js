@@ -82,7 +82,8 @@ addToCartBtn.addEventListener("click", () => {
     // reset the cart
     basketContent.innerHTML = ``;
     // create the template
-    const cartItemTemplate = `<img
+    const cartItemTemplate = `
+                <img
                 src="images/image-product-1-thumbnail.jpg"
                 alt="thumbnail"
               />
@@ -110,14 +111,19 @@ addToCartBtn.addEventListener("click", () => {
                   fill-rule="nonzero"
                   xlink:href="#a"
                 />
-              </svg>`;
-
+              </svg>
+              `;
     const template = document.createElement("div");
+    const btn = document.createElement("div");
+    btn.classList.add("btn-cart");
+    btn.textContent = "Checkout";
+    btn.style.marginTop = "10px";
     template.cloneNode(false);
     template.classList.add("cart-item");
     template.innerHTML = cartItemTemplate;
     // Append template
     basketContent.append(template);
+    basketContent.append(btn);
 
     itemCounter.textContent = itemQty;
 

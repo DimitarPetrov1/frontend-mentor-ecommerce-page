@@ -30,7 +30,15 @@ ul a {
   font-weight: 700;
   letter-spacing: -0.8px;
   margin-right: 55px;
-  font-size: 1.8rem;
+  font-size: 2rem;
+}
+.logo-mobile {
+  display: none;
+  position: absolute;
+  left: 60px;
+  top: 8px;
+  font-weight: 700;
+  font-size: 2rem;
 }
 nav {
   display: flex;
@@ -278,6 +286,8 @@ main {
   padding: 20px;
   height: 75%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .empty-cart-txt {
@@ -470,30 +480,15 @@ main {
 
 .mobile-control-left,
 .mobile-control-right {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #fff;
-  z-index: 10;
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: none;
 }
 
-.mobile-control-left {
-  left: 10px;
+/* credits */
+.attribution {
+  padding-bottom: 20px;
+  color: hsl(26, 100%, 55%);
 }
 
-.mobile-control-right {
-  right: 10px;
-}
-
-.mobile-control-left svg,
-.mobile-control-right svg {
-  stroke: hsl(220, 13%, 13%);
-  transform: scale(0.8);
-  pointer-events: none;
+.attribution a {
+  color: hsl(26, 100%, 55%);
 }
